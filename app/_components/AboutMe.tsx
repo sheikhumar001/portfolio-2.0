@@ -67,16 +67,18 @@ const AboutMe = () => {
                 <div className="grid md:grid-cols-12 mt-9">
                     <div className="md:col-span-5">
                         <p className="text-5xl slide-up-and-fade">
-                            Hi, I&apos;m Tajmirul.
+                            Hi, I&apos;m Syed Mujahid.
                         </p>
                     </div>
                     <div className="md:col-span-7">
                         <div className="text-lg text-muted-foreground max-w-[450px]">
                             <p className="slide-up-and-fade">
-                                I&apos;m a frontend web developer dedicated to
-                                turning ideas into creative solutions. I
-                                specialize in creating seamless and intuitive
-                                user experiences.
+                                I&apos;m a full stack developer with a passion
+                                for building scalable, secure, and visually
+                                appealing web applications. I&apos;ve been
+                                working in the industry for over 5 years, and
+                                have a strong background in both front-end and
+                                back-end development.
                             </p>
                             <p className="mt-3 slide-up-and-fade">
                                 My approach focuses on creating scalable,

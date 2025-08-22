@@ -4,7 +4,7 @@ export const GENERAL_INFO = {
     email: 'tasmirolislam@gmail.com',
 
     emailSubject: "Let's collaborate on a project",
-    emailBody: 'Hi Tajmirul, I am reaching out to you because...',
+    emailBody: 'Hi Syed Mujahid, I am reaching out to you because...',
 
     oldPortfolio: 'https://www.legacy.me.toinfinite.dev',
     upworkProfile: 'https://www.upwork.com/freelancers/tajmirul',
