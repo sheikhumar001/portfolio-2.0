@@ -2,11 +2,13 @@ import { IProject } from '@/types';
 
 export const GENERAL_INFO = {
     email: 'syedmujahidahmed0@gmail.com',
-
+    phone: '+919014692100',
+    location: 'Hyderabad, India',
     emailSubject: "Let's collaborate on a project",
     emailBody: 'Hi Syed Mujahid, I am reaching out to you because...',
-
     oldPortfolio: 'https://www.legacy.Mujahid.toinfinite.dev',
+    portfolio:
+        'https://drive.google.com/file/d/15lpevey6paCVhYQmHtNpib569miW_ToV/view?usp=drivesdk',
     upworkProfile: 'https://www.upwork.com/freelancers/Mujahid',
 };
 
@@ -16,11 +18,8 @@ export const SOCIAL_LINKS = [
         name: 'linkedin',
         url: 'https://www.linkedin.com/in/syed-mujahid-ahmed-b16686248',
     },
-    {
-        name: 'facebook',
-        url: 'https://www.linkedin.com/in/syed-mujahid-ahmed-b16686248',
-    },
-    { name: 'Old Version', url: GENERAL_INFO.oldPortfolio },
+    // Facebook wasn't provided in the resume; removed duplicate LinkedIn entry.
+    { name: 'portfolio', url: GENERAL_INFO.portfolio },
 ];
 
 export const MY_STACK = {
@@ -82,10 +81,6 @@ export const MY_STACK = {
     ],
     database: [
         {
-            name: 'MySQL',
-            icon: '/logo/mysql.svg',
-        },
-        {
             name: 'PostgreSQL',
             icon: '/logo/postgreSQL.png',
         },
@@ -116,50 +111,52 @@ export const MY_STACK = {
 
 export const PROJECTS: IProject[] = [
     {
-        title: 'MTI Electronics',
-        slug: 'mti-electronics',
-        liveUrl: 'https://mti-electronics.vercel.app/',
-        year: 2025,
-        description: `
-      A complete agency portfolio platform built for MTI Electronics to showcase their services, blog content, and product offerings. <br/> <br/>
-      
-      Key Features:<br/>
-      <ul>
-        <li>🛠️ Service Display System: Interactive service showcase with synchronized sliders</li>
-        <li>✍️ Blog Management: SEO-friendly blog with categorization and search</li>
-        <li>🛒 Product Catalog: Organized product display with filtering capabilities</li>
-        <li>📱 Fully Responsive: Optimized for all device sizes</li>
-        <li>⚡ Fast Performance: Optimized Next.js frontend with ISR (Incremental Static Regeneration)</li>
-      </ul><br/>
-      
-      Technical Highlights:
-      <ul>
-        <li>Implemented complex slider synchronization logic using Swiper.js</li>
-        <li>Customized Payload CMS admin panel for intuitive content management</li>
-        <li>Developed reusable UI components with shadcn for design consistency</li>
-        <li>Configured efficient data fetching strategies in Next.js</li>
-      </ul>
-      `,
-        role: `
-      Full-Stack Developer <br/>
-      Owned the entire development lifecycle:
-      <ul>
-        <li>✅ Backend: Configured Payload CMS with custom collections for services, blogs, and products</li>
-        <li>🎨 Frontend: Built all UI components using Tailwind CSS and shadcn</li>
-        <li>🔄 State Management: Implemented client-side data fetching and caching</li>
-        <li>🖥️ CMS Customization: Created admin interfaces for content editors</li>
-        <li>🚀 Deployment: Set up CI/CD pipeline for Vercel hosting</li>
-        <li>🧩 Third-Party Integration: Added Swiper.js for interactive sliders</li>
-      </ul>
-      `,
+        title: 'AI Document Chat System',
+        slug: 'ai-document-chat-system',
+        liveUrl: '',
+        year: 2024,
+        description: `Built a full-stack RAG (Retrieval-Augmented Generation) application that allows users to upload documents (PDF, TXT, MD) and ask questions answered strictly from the document content. The system extracts text, chunks it intelligently, generates embeddings using OpenAI, stores them in PostgreSQL with pgvector for semantic search, and uses GPT to generate grounded answers. Features include file upload validation, text extraction from multiple formats, vector similarity search, citation tracking, and strict grounding to prevent hallucination.`,
+        role: 'Full Stack Developer',
         techStack: [
+            'FastAPI',
             'Next.js',
-            'Payload CMS',
+            'TypeScript',
+            'PostgreSQL',
+            'pgvector',
+            'Docker',
+            'Python',
+            'React',
             'Tailwind CSS',
-            'shadcn',
-            'Swiper.js',
-            'React Hook Form',
-            'Vercel',
+        ],
+        thumbnail: '/projects/thumbnail/devLinks.jpg',
+        longThumbnail: '/projects/long/devLinks.jpg',
+        images: [
+            '/projects/images/devLinks-1.png',
+            '/projects/images/devLinks-2.png',
+            '/projects/images/devLinks-3.png',
+        ],
+        sourceCode: '',
+    },
+    {
+        title: 'Applicant Tracking System (ATS)',
+        slug: 'applicant-tracking-system',
+        liveUrl: '',
+        year: 2024,
+        description: `Engineered a comprehensive ATS from scratch at Proficient Now, architecting scalable microservices backend and dynamic frontend to manage the complete recruitment lifecycle. Built robust data synchronization framework with bi-directional migrators between Airtable and PostgreSQL, ensuring data consistency across platforms. Implemented real-time notification service using WebSockets with RabbitMQ message queuing for push notifications and email campaigns. Integrated multiple job portal APIs to automatically aggregate position data, reducing manual research by 80%.`,
+        role: 'Software Engineer',
+        techStack: [
+            'Node.js',
+            'Express.js',
+            'Next.js',
+            'TypeScript',
+            'PostgreSQL',
+            'Prisma',
+            'WebSockets',
+            'RabbitMQ',
+            'Docker',
+            'React',
+            'Airtable API',
+            'Job Portal APIs',
         ],
         thumbnail: '/projects/thumbnail/mti-electronics.webp',
         longThumbnail: '/projects/long/mti-electronics.webp',
@@ -167,18 +164,25 @@ export const PROJECTS: IProject[] = [
             '/projects/images/mti-electronics-1.webp',
             '/projects/images/mti-electronics-2.webp',
         ],
+        sourceCode: '',
     },
     {
-        title: 'Epikcart',
-        slug: 'epikcart',
+        title: 'Worldlynk - Student Platform',
+        slug: 'worldlynk-student-platform',
+        liveUrl: 'https://worldlynk.co.uk',
+        year: 2024,
+        description: `Built worldlynk.co.uk using React and Firebase, providing international students with a comprehensive platform to discover universities, accommodations, events, restaurants, and job opportunities abroad. Leveraged Firebase for backend functionalities including user authentication, real-time database updates, and cloud storage. Implemented intuitive responsive UI with real-time search, personalized recommendations, and secure data handling for enhanced user experience.`,
+        role: 'Full Stack Developer',
         techStack: [
             'React',
-            'Redux',
-            'React i18n',
-            'Tailwind CSS',
-            'Framer Motion',
-            'debouncing',
-            'Api Integration',
+            'Firebase',
+            'JavaScript',
+            'HTML',
+            'CSS',
+            'Firebase Auth',
+            'Firestore',
+            'Firebase Storage',
+            'Real-time Search',
         ],
         thumbnail: '/projects/thumbnail/epikcart.jpg',
         longThumbnail: '/projects/long/epikcart.jpg',
@@ -189,24 +193,24 @@ export const PROJECTS: IProject[] = [
             '/projects/images/epikcart-4.png',
             '/projects/images/epikcart-5.png',
         ],
-        liveUrl: 'https://demo.epikcart.siphertech.com/',
-        year: 2023,
-        description: `Epikcart is a feature-rich, scalable e-commerce platform tailored for large businesses. It features dynamic product filtering, multi-language support with RTL, advanced inventory management, order tracking, and refund systems, offering a comprehensive solution for multi-vendor operations.`,
-        role: `As the frontend developer in a team of five, I: <br/>
-        - Built the frontend from scratch using React, Redux, RTK Query, and Tailwind CSS.<br/>
-        - Developed dynamic filtering logic for the product search page with admin-configurable parameters.<br/>
-        - Integrated multi-language support with React i18n, including RTL handling.<br/>
-        - Delivered a responsive, user-friendly interface in collaboration with the UI/UX designer.`,
+        sourceCode: '',
     },
     {
-        title: 'Resume Roaster',
-        slug: 'resume-roaster',
+        title: 'E-commerce Platform',
+        slug: 'e-commerce-platform',
+        liveUrl: '',
+        year: 2024,
+        description: `Developed and maintained a feature-rich e-commerce website using the MERN stack at Neonflake, focusing on responsive and user-friendly designs for optimal shopping experience. Designed and implemented RESTful APIs for seamless front-end and back-end communication, ensuring efficient data handling and real-time updates. Managed databases for product and user information, optimized backend processes to enhance performance and reliability of the platform.`,
+        role: 'Software Engineer Intern',
         techStack: [
-            'GPT-4',
-            'Next.js',
-            'Postgressql',
-            'Prisma',
-            'Tailwind CSS',
+            'MongoDB',
+            'Express.js',
+            'React',
+            'Node.js',
+            'Material-UI',
+            'RESTful APIs',
+            'JavaScript',
+            'Database Optimization',
         ],
         thumbnail: '/projects/thumbnail/resume-roaster.jpg',
         longThumbnail: '/projects/long/resume-roaster.jpg',
@@ -215,24 +219,28 @@ export const PROJECTS: IProject[] = [
             '/projects/images/resume-roaster-2.png',
             '/projects/images/resume-roaster-3.png',
         ],
-        liveUrl: 'https://resume-roaster.vercel.app/',
-        year: 2023,
-        description:
-            'Resume Roaster is a web application designed to provide tailored resume feedback and professional writing services. Built with Next.js, PostgreSQL, Prisma, and Tailwind CSS, it integrates GPT-4 for AI-powered recommendations. The platform also includes peer-to-peer reviews with a points-based system, fostering a collaborative and engaging experience. Targeting freshers, experienced professionals, and programmers, it helps optimize resumes for job-specific success.',
-        role: `As the sole developer and business owner, I:<br/>
-        - Designed and developed the platform end-to-end using Next.js, PostgreSQL, Prisma, and Tailwind CSS.<br/>
-        - Integrated GPT-4 for AI-driven feedback and insights.<br/>
-        - Implemented complex SQL queries, including one to identify the top two resumes based on user points.`,
+        sourceCode: '',
     },
     {
-        title: 'Real Estate',
-        slug: 'property-pro',
+        title: 'AI Powered Financial App',
+        slug: 'ai-powered-financial-app',
+        liveUrl: '',
+        year: 2024,
+        description: `Me and my team built an AI-powered financial mobile application. I have developed API using Express, Typescript, OpenAI, AWS, and MongoDB. Used OTP via AWS SES, Google, and Facebook for the authentication system. Built AI assistants using OpenAI's latest model and trained using our dataset. Voice messages are converted to text using AWS Transcribe. The app fetches data from Google Sheets and generates a PDF term sheet, sent via AWS SES.`,
+        role: 'Backend Developer',
         techStack: [
-            'React.js',
-            'Redux',
-            'Tailwind CSS',
-            'React i18n',
-            'Framer Motion',
+            'Express',
+            'TypeScript',
+            'MongoDB',
+            'OpenAI API',
+            'AWS SES',
+            'AWS S3',
+            'Node Mailer',
+            'Joi',
+            'Puppeteer',
+            'EC2',
+            'PM2',
+            'Nginx',
         ],
         thumbnail: '/projects/thumbnail/property-pro.jpg',
         longThumbnail: '/projects/long/property-pro.jpg',
@@ -241,20 +249,30 @@ export const PROJECTS: IProject[] = [
             '/projects/images/property-pro-2.png',
             '/projects/images/property-pro-3.png',
         ],
-        liveUrl: 'https://demo.propertypro.siphertech.com/',
-        year: 2023,
-        description:
-            'PropertyPro is a real estate management platform offering users a seamless experience to explore, manage, and view property listings. The application emphasizes accessibility and responsive design, ensuring a smooth interface across devices.',
-        role: `As the frontend developer, I:<br/>
-        - Built the frontend using React, Redux, RTK Query, Framer Motion, and Tailwind CSS.<br/>
-        - Integrated dynamic state management for efficient handling of property data.<br/>
-        - Implemented multi-language support with React i18n to cater to diverse audiences.<br/>
-        - Enhanced user interaction with animations and transitions using Framer Motion.`,
+        sourceCode: '',
     },
     {
-        title: 'Consulting Finance',
-        slug: 'crenotive',
-        techStack: ['HTML', 'CSS & SCSS', 'Javascript', 'Bootstrap'],
+        title: 'AI Powered Real Estate',
+        slug: 'ai-powered-real-estate',
+        liveUrl: '',
+        year: 2024,
+        description:
+            'My team built an AI-based real estate app using Replicate API and OpenAI. We used Express, Typescript, OpenAI, Replicate, Stripe, and Mongoose to develop the API. We utilized NextJS, Formik, TailwindCSS, and other npm libraries for the UI. We have trained multiple AI assistants using the latest GPT model and integrated Replicate API for image processing. We added role-based auth, subscription plans, Cron job scheduling, and payment integration with Stripe.',
+        role: 'Full Stack Developer',
+        techStack: [
+            'Express',
+            'TypeScript',
+            'MongoDB (Mongoose)',
+            'OpenAI API',
+            'Replicate AI',
+            'Stripe',
+            'NextJS',
+            'Formik',
+            'Tailwind CSS',
+            'Cronjob',
+            'JWT',
+            'Azure Blob',
+        ],
         thumbnail: '/projects/thumbnail/consulting-finance.jpg',
         longThumbnail: '/projects/long/consulting-finance.jpg',
         images: [
@@ -262,17 +280,24 @@ export const PROJECTS: IProject[] = [
             '/projects/images/consulting-finance-2.png',
             '/projects/images/consulting-finance-3.png',
         ],
-        sourceCode: 'https://github.com/mujahid411/crenotive',
-        liveUrl: 'https://crenotive.netlify.app/',
-        year: 2023,
-        description:
-            'I developed Crenotive, a portfolio website using Html, SASS, and jQuery to showcase services and expertise. The design focuses on responsive user experience and effective presentation of professional achievements.',
-        role: ``,
+        sourceCode: '',
     },
     {
-        title: 'devLinks',
-        slug: 'devLinks',
-        techStack: ['Next.js', 'Formik', 'Drag & Drop', 'Tailwind CSS'],
+        title: 'Newsroom Management',
+        slug: 'newsroom-management',
+        liveUrl: '',
+        year: 2024,
+        description:
+            "My team and I developed a newspaper management dashboard application called Newsroom Management. As a front-end developer, I worked on creating the dashboard using NextJS, Material UI, Redux, Calendar, and other necessary npm libraries. We used React Redux to manage the application's state and React-hook-form and Sun Editor to handle forms.",
+        role: 'Full Stack Developer',
+        techStack: [
+            'NextJS',
+            'Material UI',
+            'Redux',
+            'React Hook Form',
+            'Sun Editor',
+            'Calendar',
+        ],
         thumbnail: '/projects/thumbnail/devLinks.jpg',
         longThumbnail: '/projects/long/devLinks.jpg',
         images: [
@@ -280,35 +305,33 @@ export const PROJECTS: IProject[] = [
             '/projects/images/devLinks-2.png',
             '/projects/images/devLinks-3.png',
         ],
-        sourceCode: 'https://github.com/mujahid411/devsLink',
-        liveUrl: 'https://devlinks-demo.vercel.app/auth/signin',
-        year: 2023,
-        description: `One of the most challenging projects in Frontend Mentor.<br/><br/>
-
-            I developed a LinkSharing App as part of the Frontend Mentor challenge, utilizing React, Redux, and Tailwind CSS to create a responsive and feature-rich platform. The app allows users to share, save, and explore links, with a focus on intuitive design and smooth navigation. Advanced state management ensures efficient data handling for user interactions.`,
-        role: ``,
+        sourceCode: '',
     },
 ];
 
 export const MY_EXPERIENCE = [
     {
-        title: 'Software Engineer (Frontend)',
-        company: 'Strativ AB',
-        duration: 'Dec 2024 - Present',
+        title: 'Software Engineer',
+        company: 'Proficient Now',
+        duration: 'Apr 2024 - Present',
+        location: 'Hyderabad',
     },
     {
-        title: 'Frontend Developer',
-        company: 'Epikcoders',
-        duration: 'Oct 2023 - Nov 2024',
+        title: 'Full Stack Developer (Freelance)',
+        company: 'Worldlynk (worldlynk.co.uk)',
+        duration: 'Jan 2024 - Mar 2024',
+        location: 'Remote',
     },
     {
-        title: 'Frontend Engineer',
-        company: 'Anchorblock Technology',
-        duration: 'Oct 2022 - Sep 2023',
+        title: 'Software Engineer Intern',
+        company: 'Neonflake',
+        duration: 'Feb 2024 - Apr 2024',
+        location: 'Hyderabad',
     },
     {
-        title: 'Frontend Developer (Part-time)',
-        company: 'Branex IT',
-        duration: 'Jan 2022 - Oct 2022',
+        title: 'Full Stack Web Development',
+        company: 'Code For India',
+        duration: 'May 2023 - Jan 2024',
+        location: 'Hyderabad',
     },
 ];

@@ -56,10 +56,12 @@ const Banner = () => {
                     </p>
                     <Button
                         as="link"
-                        target="_blank"
+                        href={`mailto:${
+                            GENERAL_INFO.email
+                        }?subject=${encodeURIComponent(
+                            GENERAL_INFO.emailSubject,
+                        )}&body=${encodeURIComponent(GENERAL_INFO.emailBody)}`}
                         rel="noopener noreferrer"
-                        href={GENERAL_INFO.upworkProfile}
-                        variant="primary"
                         className="mt-9 banner-button slide-up-and-fade"
                     >
                         Contact Me
